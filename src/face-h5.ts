@@ -51,6 +51,10 @@ export class faceH5 {
    * 上传用文件编码流
    */
   chunks: Array<any> = [];
+  /**
+   * 是否IOS端
+   */
+  readonly isIOS = !!navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
 
   constructor(options: {
     videoEl: HTMLVideoElement;
@@ -119,8 +123,8 @@ export class faceH5 {
     }
   }
   /**
- * 关闭录制
- */
+  * 关闭录制
+  */
   closeMediaStream(stream: MediaStream) {
     if (typeof stream.stop === "function") {
       stream.stop();
@@ -146,10 +150,10 @@ export class faceH5 {
     }
   }
   /**
-* 获取Blob对象转为base64的编码
-* @param Blob  Blob文件对象
-* @returns { Promise }
-*/
+  * 获取Blob对象转为base64的编码
+  * @param Blob  Blob文件对象
+  * @returns { Promise }
+  */
   getBlobBase64(blob: Blob) {
     return new Promise((resolve, reject) => {
       const fileReader = new FileReader();
@@ -236,7 +240,7 @@ export class faceH5 {
       let blobFile: Blob = await new Promise((resolve) => {
         setTimeout(() => {
           resolve(this.videoBlob!);
-        }, 1000);
+        }, this.isIOS ? 1000 : 4);
       });
       let base64 = await this.getBlobBase64(blobFile);
       return {

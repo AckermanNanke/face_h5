@@ -1,6 +1,6 @@
-# 移动端 H5 人脸识别
+# 移动端 H5 视频录制
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+安卓通用，IOS 端高版本可用
 
 ## Type Support For `.vue` Imports in TS
 

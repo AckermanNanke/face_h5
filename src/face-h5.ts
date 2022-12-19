@@ -220,7 +220,6 @@ export class faceH5 {
     this.isStartRecord = true;
   }
 
-
   async stopRecord() {
     if (this.isStartRecord) {
       /**
